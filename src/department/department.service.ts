@@ -110,7 +110,7 @@ export class DepartmentService {
 
   async remove(id: number): Promise<DepartmentResponse> {
     try {
-      const result = await this.departmentRepository.delete(id);
+      await this.departmentRepository.delete(id);
       return { message: 'Department deleted succesfully' };
     } catch (error) {
       return { message: 'Error while deleting department', error };
